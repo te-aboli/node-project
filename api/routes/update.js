@@ -7,8 +7,10 @@ var path = require('path');
 const mongoose = require('mongoose');
 
 router.get('/:id' , function(req,res)
-{
-    userModel.find(function(err,User)
+{   
+    var id = req.params.id;
+    
+    userModel.findById(id, function(err,User)
     {
         if(err)
         {
@@ -16,7 +18,7 @@ router.get('/:id' , function(req,res)
         } else{
 
              res.render(path.resolve('api/views/update.ejs'), { User : User});
-            console.log("Shows Users",User);
+             //console.log("Shows Users",User);
         }
     })
    

@@ -50,6 +50,7 @@ router.get('/:userId', (req, res, next) =>
     User.findById(id)
     .exec().then(doc => {
         console.log("From Database",doc);
+    
         res.status(200).json(doc);
     })
     .catch(err =>  {
@@ -105,5 +106,6 @@ router.delete('/:userID', (req, res, next) =>
 router.get( '/home', function(req, res){
     console.log("This shows Home Page");
 });
+
 
 module.exports = router;
