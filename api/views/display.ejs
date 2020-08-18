@@ -1,0 +1,33 @@
+<%- include('index'); -%>
+
+
+<%   console.log(User.length); if (User.length > 0) {  %>
+    <table border="1">
+        <tr>
+            <th>Index</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Comments</th>
+            <th>Action</th>
+        </tr>
+        <% for (var i=0; i<User.length; i++) { %>
+            <tr>
+                <td><%= i %></td>
+                <td><%= User[i].name %></td>
+                <td><%= User[i].email %></td>
+                <td><%= User[i].phone %></td>
+                <td><%= User[i].comments %></td>
+
+                <td>
+                    <a href='/update/<%= User[i]._id %>'>update</a> |
+                    <a href='/delete/<%= User[i]._id %>'>Delete</a> 
+
+                </td>
+            </tr>
+
+        <% } %>
+    </table>
+    <% } else { %>
+        No Record Found
+        <% } %>

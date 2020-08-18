@@ -1,0 +1,34 @@
+<%- include('index'); -%>
+
+<form method="post">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td>
+                <input type="text" placeholder="Enter Name" name="name" value="<%= User.name%>" required >
+            </td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>
+                <input type="email" placeholder="Enter Email" name="email" value="<%= User.email%>" required >
+            </td>
+        </tr>
+        <tr>
+            <td>phone:</td>
+            <td>
+                <input type="number" placeholder="Enter phone" name="phone" value="<%= User.phone%>" required >
+            </td>
+        </tr>
+        <tr>
+            <td>comments:</td>
+            <td>
+                <input type="text" placeholder="Enter comments" name="comments" value="<%= User.comments%>" required >
+            </td>
+        </tr>
+        
+    </table>
+    <td><input type="submit">
+        <input type = "button" value="Display" onclick="window.location ='./display'">
+
+</form>
